@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Platform Titip Jual Mahasiswa</title>
+</head>
+<body>
+
+  <h1>Platform Titip Jual Barang/Jasa Antar Mahasiswa</h1>
+  <p>Tempat mahasiswa saling bantu menjual dan membeli barang atau jasa.</p>
+
+  <hr>
+
+  <h2>Cari Barang/Jasa</h2>
+  <input type="text" placeholder="Ketik nama barang atau jasa...">
+  <button>Cari</button>
+
+  <hr>
+
+  <h2>Daftar Barang/Jasa</h2>
+
+  <div id="list-barang">
+    <div>
+      <h3>1. Jasa Print & Fotokopi</h3>
+      <p>Dekat kampus. Kirim file via WhatsApp. Cepat dan murah.</p>
+      <p><strong>Penjua:</strong> Shafwan Aulia Rahman (kampus 1)</p>
+    </div>
+
+    <div>
+      <h3>2. Jasa Cari Laptop</h3>
+      <p>Kondisi bekas, masih bagus. Cocok untuk semester awal.</p>
+      <p><strong>jasa:</strong> Shafwan Aulia Rahman (kampus 1)</p>
+    </div>
+
+    <div>
+      <h3>3. Titip Makanan</h3>
+      <p>Makanan daerah UMS.</p>
+      <p><strong>jasa:</strong> Shafwan Aulia Rahman (kampus 1)</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Tambah Barang/Jasa Anda</h2>
+  <form id="form-barang">
+    <p>
+      <label>Nama Barang/Jasa:<br>
+        <input type="text" id="nama" required>
+      </label>
+    </p>
+    <p>
+      <label>Deskripsi:<br>
+        <textarea id="deskripsi" required></textarea>
+      </label>
+    </p>
+    <p>
+      <label>Nama Penjual:<br>
+        <input type="text" id="penjual" required>
+      </label>
+    </p>
+    <p>
+      <label>Kampus:<br>
+        <input type="text" id="kampus" required>
+      </label>
+    </p>
+    <button type="submit">Tambahkan</button>
+  </form>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2025 Titip Jual Mahasiswa UMS</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("form-barang");
+    const list = document.getElementById("list-barang");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const deskripsi = document.getElementById("deskripsi").value;
+      const penjual = document.getElementById("penjual").value;
+      const kampus = document.getElementById("kampus").value;
+
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <h3>${list.children.length + 1}. ${nama}</h3>
+        <p>${deskripsi}</p>
+        <p><strong>Penjual:</strong> ${penjual} (${kampus})</p>
+      `;
+      list.appendChild(div);
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
