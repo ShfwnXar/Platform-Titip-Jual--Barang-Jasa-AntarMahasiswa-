@@ -1,75 +1,202 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Platform Titip Jual Mahasiswa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4fa;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      margin: 0.5rem 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+
+    .search-bar button {
+      padding: 0.7rem 1rem;
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #1e40af;
+    }
+
+    .form-section {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    form p {
+      margin-bottom: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      background-color: #2563eb;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Platform Titip Jual Barang/Jasa Antar Mahasiswa</h1>
-  <p>Tempat mahasiswa saling bantu menjual dan membeli barang atau jasa.</p>
+  <header>
+    <h1>Platform Titip Jual Mahasiswa</h1>
+    <p>Jual-beli barang & jasa antar mahasiswa secara mudah dan aman</p>
+  </header>
 
-  <hr>
-
-  <h2>Cari Barang/Jasa</h2>
-  <input type="text" placeholder="Ketik nama barang atau jasa...">
-  <button>Cari</button>
-
-  <hr>
-
-  <h2>Daftar Barang/Jasa</h2>
-
-  <div id="list-barang">
-    <div>
-      <h3>1. Jasa Print & Fotokopi</h3>
-      <p>Dekat kampus. Kirim file via WhatsApp. Cepat dan murah.</p>
-      <p><strong>Penjua:</strong> Shafwan Aulia Rahman (kampus 1)</p>
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" placeholder="Cari barang atau jasa...">
+      <button>Cari</button>
     </div>
 
-    <div>
-      <h3>2. Jasa Cari Laptop</h3>
-      <p>Kondisi bekas, masih bagus. Cocok untuk semester awal.</p>
-      <p><strong>jasa:</strong> Shafwan Aulia Rahman (kampus 1)</p>
+    <h2>Daftar Barang/Jasa</h2>
+    <div id="list-barang" class="grid">
+      <!-- Contoh item -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Print+Fotokopi" alt="Jasa Print">
+        <div class="card-content">
+          <h3>Jasa Print & Fotokopi</h3>
+          <p>Dekat kampus. Kirim file via WhatsApp. Cepat dan murah.</p>
+          <p><strong>Penjual:</strong> Shafwan Aulia Rahman (Kampus 1)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Laptop+Bekas" alt="Cari Laptop">
+        <div class="card-content">
+          <h3>Jasa Cari Laptop</h3>
+          <p>Kondisi bekas, masih bagus. Cocok untuk semester awal.</p>
+          <p><strong>Penjual:</strong> Shafwan Aulia Rahman (Kampus 1)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Makanan+UMS" alt="Titip Makanan">
+        <div class="card-content">
+          <h3>Titip Makanan</h3>
+          <p>Makanan daerah UMS.</p>
+          <p><strong>Penjual:</strong> Shafwan Aulia Rahman (Kampus 1)</p>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <h3>3. Titip Makanan</h3>
-      <p>Makanan daerah UMS.</p>
-      <p><strong>jasa:</strong> Shafwan Aulia Rahman (kampus 1)</p>
+    <div class="form-section">
+      <h2>Tambah Barang/Jasa Anda</h2>
+      <form id="form-barang">
+        <p>
+          <label>Nama Barang/Jasa:<br>
+            <input type="text" id="nama" required>
+          </label>
+        </p>
+        <p>
+          <label>Deskripsi:<br>
+            <textarea id="deskripsi" required></textarea>
+          </label>
+        </p>
+        <p>
+          <label>URL Gambar:<br>
+            <input type="text" id="gambar" required placeholder="https://example.com/gambar.jpg">
+          </label>
+        </p>
+        <p>
+          <label>Nama Penjual:<br>
+            <input type="text" id="penjual" required>
+          </label>
+        </p>
+        <p>
+          <label>Kampus:<br>
+            <input type="text" id="kampus" required>
+          </label>
+        </p>
+        <button type="submit">Tambahkan</button>
+      </form>
     </div>
   </div>
 
-  <hr>
-
-  <h2>Tambah Barang/Jasa Anda</h2>
-  <form id="form-barang">
-    <p>
-      <label>Nama Barang/Jasa:<br>
-        <input type="text" id="nama" required>
-      </label>
-    </p>
-    <p>
-      <label>Deskripsi:<br>
-        <textarea id="deskripsi" required></textarea>
-      </label>
-    </p>
-    <p>
-      <label>Nama Penjual:<br>
-        <input type="text" id="penjual" required>
-      </label>
-    </p>
-    <p>
-      <label>Kampus:<br>
-        <input type="text" id="kampus" required>
-      </label>
-    </p>
-    <button type="submit">Tambahkan</button>
-  </form>
-
-  <hr>
-
   <footer>
-    <p>&copy; 2025 Titip Jual Mahasiswa UMS</p>
+    &copy; 2025 Titip Jual Mahasiswa
   </footer>
 
   <script>
@@ -81,17 +208,22 @@
 
       const nama = document.getElementById("nama").value;
       const deskripsi = document.getElementById("deskripsi").value;
+      const gambar = document.getElementById("gambar").value;
       const penjual = document.getElementById("penjual").value;
       const kampus = document.getElementById("kampus").value;
 
-      const div = document.createElement("div");
-      div.innerHTML = `
-        <h3>${list.children.length + 1}. ${nama}</h3>
-        <p>${deskripsi}</p>
-        <p><strong>Penjual:</strong> ${penjual} (${kampus})</p>
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${gambar}" alt="${nama}">
+        <div class="card-content">
+          <h3>${nama}</h3>
+          <p>${deskripsi}</p>
+          <p><strong>Penjual:</strong> ${penjual} (${kampus})</p>
+        </div>
       `;
-      list.appendChild(div);
 
+      list.appendChild(card);
       form.reset();
     });
   </script>
